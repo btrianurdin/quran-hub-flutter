@@ -1,0 +1,95 @@
+{
+  "nomor": 111,
+  "nama": "اللهب",
+  "namaLatin": "Al-Lahab",
+  "jumlahAyat": 5,
+  "tempatTurun": "Mekah",
+  "arti": "Api Yang Bergejolak",
+  "deskripsi": "Surat ini terdiri atas 5 ayat, termasuk golongan surat-surat Makkiyyah,  diturunkan sesudah surat Al Fath. Nama <i>Al Lahab</i> diambil dari kata  <i>Al Lahab</i> yang terdapat pada ayat ketiga surat ini yang artinya gejolak  api. Surat ini juga dinamakan surat <i>Al Masad</i>.",
+  "audioFull": {
+    "01": "https://equran.nos.wjv-1.neo.id/audio-full/Abdullah-Al-Juhany/111.mp3",
+    "02": "https://equran.nos.wjv-1.neo.id/audio-full/Abdul-Muhsin-Al-Qasim/111.mp3",
+    "03": "https://equran.nos.wjv-1.neo.id/audio-full/Abdurrahman-as-Sudais/111.mp3",
+    "04": "https://equran.nos.wjv-1.neo.id/audio-full/Ibrahim-Al-Dossari/111.mp3",
+    "05": "https://equran.nos.wjv-1.neo.id/audio-full/Misyari-Rasyid-Al-Afasi/111.mp3"
+  },
+  "ayat": [
+    {
+      "nomorAyat": 1,
+      "teksArab": "تَبَّتْ يَدَآ اَبِيْ لَهَبٍ وَّتَبَّۗ",
+      "teksLatin": "tabbat yadā abī lahabiw wa tabb(a).",
+      "teksIndonesia": "Binasalah kedua tangan Abu Lahab dan benar-benar binasa dia!",
+      "audio": {
+        "01": "https://equran.nos.wjv-1.neo.id/audio-partial/Abdullah-Al-Juhany/111001.mp3",
+        "02": "https://equran.nos.wjv-1.neo.id/audio-partial/Abdul-Muhsin-Al-Qasim/111001.mp3",
+        "03": "https://equran.nos.wjv-1.neo.id/audio-partial/Abdurrahman-as-Sudais/111001.mp3",
+        "04": "https://equran.nos.wjv-1.neo.id/audio-partial/Ibrahim-Al-Dossari/111001.mp3",
+        "05": "https://equran.nos.wjv-1.neo.id/audio-partial/Misyari-Rasyid-Al-Afasi/111001.mp3"
+      }
+    },
+    {
+      "nomorAyat": 2,
+      "teksArab": "مَآ اَغْنٰى عَنْهُ مَالُهٗ وَمَا كَسَبَۗ",
+      "teksLatin": "mā agnā ‘anhu māluhū wa mā kasab(a).",
+      "teksIndonesia": "Tidaklah berguna baginya hartanya dan apa yang dia usahakan.",
+      "audio": {
+        "01": "https://equran.nos.wjv-1.neo.id/audio-partial/Abdullah-Al-Juhany/111002.mp3",
+        "02": "https://equran.nos.wjv-1.neo.id/audio-partial/Abdul-Muhsin-Al-Qasim/111002.mp3",
+        "03": "https://equran.nos.wjv-1.neo.id/audio-partial/Abdurrahman-as-Sudais/111002.mp3",
+        "04": "https://equran.nos.wjv-1.neo.id/audio-partial/Ibrahim-Al-Dossari/111002.mp3",
+        "05": "https://equran.nos.wjv-1.neo.id/audio-partial/Misyari-Rasyid-Al-Afasi/111002.mp3"
+      }
+    },
+    {
+      "nomorAyat": 3,
+      "teksArab": "سَيَصْلٰى نَارًا ذَاتَ لَهَبٍۙ",
+      "teksLatin": "sayaṣlā nāran żāta lahab(in).",
+      "teksIndonesia": "Kelak dia akan masuk ke dalam api yang bergejolak (neraka).",
+      "audio": {
+        "01": "https://equran.nos.wjv-1.neo.id/audio-partial/Abdullah-Al-Juhany/111003.mp3",
+        "02": "https://equran.nos.wjv-1.neo.id/audio-partial/Abdul-Muhsin-Al-Qasim/111003.mp3",
+        "03": "https://equran.nos.wjv-1.neo.id/audio-partial/Abdurrahman-as-Sudais/111003.mp3",
+        "04": "https://equran.nos.wjv-1.neo.id/audio-partial/Ibrahim-Al-Dossari/111003.mp3",
+        "05": "https://equran.nos.wjv-1.neo.id/audio-partial/Misyari-Rasyid-Al-Afasi/111003.mp3"
+      }
+    },
+    {
+      "nomorAyat": 4,
+      "teksArab": "وَّامْرَاَتُهٗ ۗحَمَّالَةَ الْحَطَبِۚ",
+      "teksLatin": "wamra'atuh(ū), ḥammālatal-ḥaṭab(i).",
+      "teksIndonesia": "Dan (begitu pula) istrinya, pembawa kayu bakar (penyebar fitnah). ",
+      "audio": {
+        "01": "https://equran.nos.wjv-1.neo.id/audio-partial/Abdullah-Al-Juhany/111004.mp3",
+        "02": "https://equran.nos.wjv-1.neo.id/audio-partial/Abdul-Muhsin-Al-Qasim/111004.mp3",
+        "03": "https://equran.nos.wjv-1.neo.id/audio-partial/Abdurrahman-as-Sudais/111004.mp3",
+        "04": "https://equran.nos.wjv-1.neo.id/audio-partial/Ibrahim-Al-Dossari/111004.mp3",
+        "05": "https://equran.nos.wjv-1.neo.id/audio-partial/Misyari-Rasyid-Al-Afasi/111004.mp3"
+      }
+    },
+    {
+      "nomorAyat": 5,
+      "teksArab": "فِيْ جِيْدِهَا حَبْلٌ مِّنْ مَّسَدٍ ࣖ",
+      "teksLatin": "fī jīdihā ḥablum mim masad(in).",
+      "teksIndonesia": "Di lehernya ada tali dari sabut yang dipintal.",
+      "audio": {
+        "01": "https://equran.nos.wjv-1.neo.id/audio-partial/Abdullah-Al-Juhany/111005.mp3",
+        "02": "https://equran.nos.wjv-1.neo.id/audio-partial/Abdul-Muhsin-Al-Qasim/111005.mp3",
+        "03": "https://equran.nos.wjv-1.neo.id/audio-partial/Abdurrahman-as-Sudais/111005.mp3",
+        "04": "https://equran.nos.wjv-1.neo.id/audio-partial/Ibrahim-Al-Dossari/111005.mp3",
+        "05": "https://equran.nos.wjv-1.neo.id/audio-partial/Misyari-Rasyid-Al-Afasi/111005.mp3"
+      }
+    }
+  ],
+  "suratSelanjutnya": {
+    "nomor": 112,
+    "nama": "الاخلاص",
+    "namaLatin": "Al-Ikhlas",
+    "jumlahAyat": 4
+  },
+  "suratSebelumnya": {
+    "nomor": 110,
+    "nama": "النصر",
+    "namaLatin": "An-Nasr",
+    "jumlahAyat": 3
+  }
+}

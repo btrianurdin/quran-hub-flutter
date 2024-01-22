@@ -1,0 +1,82 @@
+{
+  "nomor": 112,
+  "nama": "الاخلاص",
+  "namaLatin": "Al-Ikhlas",
+  "jumlahAyat": 4,
+  "tempatTurun": "Mekah",
+  "arti": "Ikhlas",
+  "deskripsi": "Surat ini terdiri atas 4 ayat, termasuk golongan surat-surat  Makkiyyah, diturunkan sesudah sesudah surat An Naas. Dinamakan <i>Al Ikhlas</i> karena surat ini sepenuhnya menegaskan kemurnian keesaan Allah s.w.t.",
+  "audioFull": {
+    "01": "https://equran.nos.wjv-1.neo.id/audio-full/Abdullah-Al-Juhany/112.mp3",
+    "02": "https://equran.nos.wjv-1.neo.id/audio-full/Abdul-Muhsin-Al-Qasim/112.mp3",
+    "03": "https://equran.nos.wjv-1.neo.id/audio-full/Abdurrahman-as-Sudais/112.mp3",
+    "04": "https://equran.nos.wjv-1.neo.id/audio-full/Ibrahim-Al-Dossari/112.mp3",
+    "05": "https://equran.nos.wjv-1.neo.id/audio-full/Misyari-Rasyid-Al-Afasi/112.mp3"
+  },
+  "ayat": [
+    {
+      "nomorAyat": 1,
+      "teksArab": "قُلْ هُوَ اللّٰهُ اَحَدٌۚ",
+      "teksLatin": "qul huwallāhu aḥad(un).",
+      "teksIndonesia": "Katakanlah (Muhammad), “Dialah Allah, Yang Maha Esa.",
+      "audio": {
+        "01": "https://equran.nos.wjv-1.neo.id/audio-partial/Abdullah-Al-Juhany/112001.mp3",
+        "02": "https://equran.nos.wjv-1.neo.id/audio-partial/Abdul-Muhsin-Al-Qasim/112001.mp3",
+        "03": "https://equran.nos.wjv-1.neo.id/audio-partial/Abdurrahman-as-Sudais/112001.mp3",
+        "04": "https://equran.nos.wjv-1.neo.id/audio-partial/Ibrahim-Al-Dossari/112001.mp3",
+        "05": "https://equran.nos.wjv-1.neo.id/audio-partial/Misyari-Rasyid-Al-Afasi/112001.mp3"
+      }
+    },
+    {
+      "nomorAyat": 2,
+      "teksArab": "اَللّٰهُ الصَّمَدُۚ",
+      "teksLatin": "allāhuṣ-ṣamad(u).",
+      "teksIndonesia": "Allah tempat meminta segala sesuatu.",
+      "audio": {
+        "01": "https://equran.nos.wjv-1.neo.id/audio-partial/Abdullah-Al-Juhany/112002.mp3",
+        "02": "https://equran.nos.wjv-1.neo.id/audio-partial/Abdul-Muhsin-Al-Qasim/112002.mp3",
+        "03": "https://equran.nos.wjv-1.neo.id/audio-partial/Abdurrahman-as-Sudais/112002.mp3",
+        "04": "https://equran.nos.wjv-1.neo.id/audio-partial/Ibrahim-Al-Dossari/112002.mp3",
+        "05": "https://equran.nos.wjv-1.neo.id/audio-partial/Misyari-Rasyid-Al-Afasi/112002.mp3"
+      }
+    },
+    {
+      "nomorAyat": 3,
+      "teksArab": "لَمْ يَلِدْ وَلَمْ يُوْلَدْۙ",
+      "teksLatin": "lam yalid wa lam yūlad.",
+      "teksIndonesia": "(Allah) tidak beranak dan tidak pula diperanakkan.",
+      "audio": {
+        "01": "https://equran.nos.wjv-1.neo.id/audio-partial/Abdullah-Al-Juhany/112003.mp3",
+        "02": "https://equran.nos.wjv-1.neo.id/audio-partial/Abdul-Muhsin-Al-Qasim/112003.mp3",
+        "03": "https://equran.nos.wjv-1.neo.id/audio-partial/Abdurrahman-as-Sudais/112003.mp3",
+        "04": "https://equran.nos.wjv-1.neo.id/audio-partial/Ibrahim-Al-Dossari/112003.mp3",
+        "05": "https://equran.nos.wjv-1.neo.id/audio-partial/Misyari-Rasyid-Al-Afasi/112003.mp3"
+      }
+    },
+    {
+      "nomorAyat": 4,
+      "teksArab": "وَلَمْ يَكُنْ لَّهٗ كُفُوًا اَحَدٌ ࣖ",
+      "teksLatin": "wa lam yakul lahū kufuwan aḥad(un).",
+      "teksIndonesia": "Dan tidak ada sesuatu yang setara dengan Dia.”",
+      "audio": {
+        "01": "https://equran.nos.wjv-1.neo.id/audio-partial/Abdullah-Al-Juhany/112004.mp3",
+        "02": "https://equran.nos.wjv-1.neo.id/audio-partial/Abdul-Muhsin-Al-Qasim/112004.mp3",
+        "03": "https://equran.nos.wjv-1.neo.id/audio-partial/Abdurrahman-as-Sudais/112004.mp3",
+        "04": "https://equran.nos.wjv-1.neo.id/audio-partial/Ibrahim-Al-Dossari/112004.mp3",
+        "05": "https://equran.nos.wjv-1.neo.id/audio-partial/Misyari-Rasyid-Al-Afasi/112004.mp3"
+      }
+    }
+  ],
+  "suratSelanjutnya": {
+    "nomor": 113,
+    "nama": "الفلق",
+    "namaLatin": "Al-Falaq",
+    "jumlahAyat": 5
+  },
+  "suratSebelumnya": {
+    "nomor": 111,
+    "nama": "اللهب",
+    "namaLatin": "Al-Lahab",
+    "jumlahAyat": 5
+  }
+}

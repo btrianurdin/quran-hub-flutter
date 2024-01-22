@@ -1,0 +1,103 @@
+{
+  "nomor": 114,
+  "nama": "الناس",
+  "namaLatin": "An-Nas",
+  "jumlahAyat": 6,
+  "tempatTurun": "Mekah",
+  "arti": "Manusia",
+  "deskripsi": "Surat ini terdiri atas 6 ayat, termasuk golongan surat-surat Makkiyah,  diturunkan sesudah surat Al Falaq. Nama <i>An Naas</i> diambil dari <i>An Naas</i> yang berulang kali disebut dalam surat ini yang artinya manusia.",
+  "audioFull": {
+    "01": "https://equran.nos.wjv-1.neo.id/audio-full/Abdullah-Al-Juhany/114.mp3",
+    "02": "https://equran.nos.wjv-1.neo.id/audio-full/Abdul-Muhsin-Al-Qasim/114.mp3",
+    "03": "https://equran.nos.wjv-1.neo.id/audio-full/Abdurrahman-as-Sudais/114.mp3",
+    "04": "https://equran.nos.wjv-1.neo.id/audio-full/Ibrahim-Al-Dossari/114.mp3",
+    "05": "https://equran.nos.wjv-1.neo.id/audio-full/Misyari-Rasyid-Al-Afasi/114.mp3"
+  },
+  "ayat": [
+    {
+      "nomorAyat": 1,
+      "teksArab": "قُلْ اَعُوْذُ بِرَبِّ النَّاسِۙ",
+      "teksLatin": "qul a‘ūżu birabbin-nās(i).",
+      "teksIndonesia": "Katakanlah, “Aku berlindung kepada Tuhannya manusia,",
+      "audio": {
+        "01": "https://equran.nos.wjv-1.neo.id/audio-partial/Abdullah-Al-Juhany/114001.mp3",
+        "02": "https://equran.nos.wjv-1.neo.id/audio-partial/Abdul-Muhsin-Al-Qasim/114001.mp3",
+        "03": "https://equran.nos.wjv-1.neo.id/audio-partial/Abdurrahman-as-Sudais/114001.mp3",
+        "04": "https://equran.nos.wjv-1.neo.id/audio-partial/Ibrahim-Al-Dossari/114001.mp3",
+        "05": "https://equran.nos.wjv-1.neo.id/audio-partial/Misyari-Rasyid-Al-Afasi/114001.mp3"
+      }
+    },
+    {
+      "nomorAyat": 2,
+      "teksArab": "مَلِكِ النَّاسِۙ",
+      "teksLatin": "malikin-nās(i).",
+      "teksIndonesia": "Raja manusia,",
+      "audio": {
+        "01": "https://equran.nos.wjv-1.neo.id/audio-partial/Abdullah-Al-Juhany/114002.mp3",
+        "02": "https://equran.nos.wjv-1.neo.id/audio-partial/Abdul-Muhsin-Al-Qasim/114002.mp3",
+        "03": "https://equran.nos.wjv-1.neo.id/audio-partial/Abdurrahman-as-Sudais/114002.mp3",
+        "04": "https://equran.nos.wjv-1.neo.id/audio-partial/Ibrahim-Al-Dossari/114002.mp3",
+        "05": "https://equran.nos.wjv-1.neo.id/audio-partial/Misyari-Rasyid-Al-Afasi/114002.mp3"
+      }
+    },
+    {
+      "nomorAyat": 3,
+      "teksArab": "اِلٰهِ النَّاسِۙ",
+      "teksLatin": "ilāhin-nās(i).",
+      "teksIndonesia": "sembahan manusia,",
+      "audio": {
+        "01": "https://equran.nos.wjv-1.neo.id/audio-partial/Abdullah-Al-Juhany/114003.mp3",
+        "02": "https://equran.nos.wjv-1.neo.id/audio-partial/Abdul-Muhsin-Al-Qasim/114003.mp3",
+        "03": "https://equran.nos.wjv-1.neo.id/audio-partial/Abdurrahman-as-Sudais/114003.mp3",
+        "04": "https://equran.nos.wjv-1.neo.id/audio-partial/Ibrahim-Al-Dossari/114003.mp3",
+        "05": "https://equran.nos.wjv-1.neo.id/audio-partial/Misyari-Rasyid-Al-Afasi/114003.mp3"
+      }
+    },
+    {
+      "nomorAyat": 4,
+      "teksArab": "مِنْ شَرِّ الْوَسْوَاسِ ەۙ الْخَنَّاسِۖ",
+      "teksLatin": "min syarril-waswāsil-khannās(i).",
+      "teksIndonesia": "dari kejahatan (bisikan) setan yang bersembunyi,",
+      "audio": {
+        "01": "https://equran.nos.wjv-1.neo.id/audio-partial/Abdullah-Al-Juhany/114004.mp3",
+        "02": "https://equran.nos.wjv-1.neo.id/audio-partial/Abdul-Muhsin-Al-Qasim/114004.mp3",
+        "03": "https://equran.nos.wjv-1.neo.id/audio-partial/Abdurrahman-as-Sudais/114004.mp3",
+        "04": "https://equran.nos.wjv-1.neo.id/audio-partial/Ibrahim-Al-Dossari/114004.mp3",
+        "05": "https://equran.nos.wjv-1.neo.id/audio-partial/Misyari-Rasyid-Al-Afasi/114004.mp3"
+      }
+    },
+    {
+      "nomorAyat": 5,
+      "teksArab": "الَّذِيْ يُوَسْوِسُ فِيْ صُدُوْرِ النَّاسِۙ",
+      "teksLatin": "allażī yuwaswisu fī ṣudūrin-nās(i).",
+      "teksIndonesia": "yang membisikkan (kejahatan) ke dalam dada manusia,",
+      "audio": {
+        "01": "https://equran.nos.wjv-1.neo.id/audio-partial/Abdullah-Al-Juhany/114005.mp3",
+        "02": "https://equran.nos.wjv-1.neo.id/audio-partial/Abdul-Muhsin-Al-Qasim/114005.mp3",
+        "03": "https://equran.nos.wjv-1.neo.id/audio-partial/Abdurrahman-as-Sudais/114005.mp3",
+        "04": "https://equran.nos.wjv-1.neo.id/audio-partial/Ibrahim-Al-Dossari/114005.mp3",
+        "05": "https://equran.nos.wjv-1.neo.id/audio-partial/Misyari-Rasyid-Al-Afasi/114005.mp3"
+      }
+    },
+    {
+      "nomorAyat": 6,
+      "teksArab": "مِنَ الْجِنَّةِ وَالنَّاسِ ࣖ ",
+      "teksLatin": "minal jinnati wan-nās(i).",
+      "teksIndonesia": "dari (golongan) jin dan manusia.”",
+      "audio": {
+        "01": "https://equran.nos.wjv-1.neo.id/audio-partial/Abdullah-Al-Juhany/114006.mp3",
+        "02": "https://equran.nos.wjv-1.neo.id/audio-partial/Abdul-Muhsin-Al-Qasim/114006.mp3",
+        "03": "https://equran.nos.wjv-1.neo.id/audio-partial/Abdurrahman-as-Sudais/114006.mp3",
+        "04": "https://equran.nos.wjv-1.neo.id/audio-partial/Ibrahim-Al-Dossari/114006.mp3",
+        "05": "https://equran.nos.wjv-1.neo.id/audio-partial/Misyari-Rasyid-Al-Afasi/114006.mp3"
+      }
+    }
+  ],
+  "suratSelanjutnya": false,
+  "suratSebelumnya": {
+    "nomor": 113,
+    "nama": "الفلق",
+    "namaLatin": "Al-Falaq",
+    "jumlahAyat": 5
+  }
+}
