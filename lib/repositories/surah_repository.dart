@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/services.dart';
+import 'package:quran/models/surah_detail_model.dart';
 import 'package:quran/models/surah_model.dart';
 
 class SurahRepository {
@@ -12,6 +13,19 @@ class SurahRepository {
       return surah;
     } catch (e) {
       return [];
+    }
+  }
+
+  Future<SurahDetailModel> getById(int id) async {
+    try {
+      final data = await rootBundle
+          .loadString('assets/data/surah-details/surah-$id.json');
+
+      final surah = SurahDetailModel.fromJson(json.decode(data));
+      print('ini data $surah');
+      return surah;
+    } catch (e) {
+      throw Exception('Error when get surah by id');
     }
   }
 }

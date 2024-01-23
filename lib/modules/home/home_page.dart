@@ -38,6 +38,20 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
         surfaceTintColor: Colors.transparent,
         titleSpacing: 0,
         elevation: 0.0,
+        actions: [
+          Container(
+            padding: const EdgeInsets.only(right: 3),
+            child: IconButton(
+              icon: const Icon(
+                Icons.favorite_border,
+                color: Colors.white,
+              ),
+              onPressed: () {},
+              splashColor: ThemeColor.surface,
+              highlightColor: ThemeColor.surface,
+            ),
+          )
+        ],
         title: Container(
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Text(
@@ -72,13 +86,43 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                       Text(
                         'Assalamualaikum',
                         style: FontStyles.regular.copyWith(
-                          fontSize: 18,
-                          color: ThemeColor.secondary,
-                          fontWeight: FontWeight.w500,
+                          fontSize: 12,
                         ),
                       ),
-                      const SizedBox(height: 8),
-                      Text('Abdul Aziz', style: FontStyles.title),
+                      const SizedBox(height: 18),
+                      TextField(
+                        decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10),
+                            borderSide: BorderSide.none,
+                          ),
+                          prefixIconConstraints: const BoxConstraints(
+                            minWidth: 35,
+                            minHeight: 18,
+                          ),
+                          prefixIcon: const Icon(
+                            Icons.search,
+                            color: ThemeColor.secondary,
+                          ),
+                          filled: true,
+                          fillColor: ThemeColor.surface,
+                          hintText: "Search surah",
+                          hintStyle: FontStyles.regular.copyWith(
+                            color: ThemeColor.secondary,
+                            fontSize: 12,
+                            height: 1.5,
+                          ),
+                          isDense: true,
+                          contentPadding: const EdgeInsets.symmetric(
+                            horizontal: 16,
+                            vertical: 8,
+                          ),
+                        ),
+                        style: FontStyles.regular.copyWith(
+                          fontSize: 12,
+                          height: 1.5,
+                        ),
+                      ),
                       const SizedBox(height: 24),
                       Stack(
                         children: [
@@ -170,14 +214,11 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                 ),
               ),
             ],
-            body: Padding(
-              padding: const EdgeInsets.all(16),
-              child: TabBarView(
-                children: [
-                  const SurahTab(),
-                  Container(),
-                ],
-              ),
+            body: TabBarView(
+              children: [
+                const SurahTab(),
+                Container(),
+              ],
             ),
           ),
         ),

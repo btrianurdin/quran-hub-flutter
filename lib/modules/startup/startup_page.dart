@@ -71,7 +71,7 @@ class StartupPage extends StatelessWidget {
                               ),
                             ),
                             onPressed: () {
-                              Future.microtask(() => context.go('/home'));
+                              context.go('/home');
                             },
                           ),
                         ),

@@ -1,16 +1,13 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:quran/modules/bookmark/bookmark_page.dart';
 import 'package:quran/modules/home/home_page.dart';
-import 'package:quran/modules/insight/insight_page.dart';
-import 'package:quran/modules/short-prayer/short_prayer_page.dart';
 import 'package:quran/modules/startup/startup_page.dart';
-import 'package:quran/screen.dart';
+import 'package:quran/modules/surah-detail/surah_detail_page.dart';
 
 class Routes {
   static final GlobalKey<NavigatorState> navigatorKey =
-      GlobalKey<NavigatorState>();
-  final GlobalKey<NavigatorState> shellNavigatorKey =
       GlobalKey<NavigatorState>();
 
   static final GoRouter router = GoRouter(
@@ -21,47 +18,14 @@ class Routes {
         builder: (context, state) => const StartupPage(),
       ),
       GoRoute(path: '/home', builder: (context, state) => const HomePage()),
-      StatefulShellRoute.indexedStack(
-        builder: (context, state, navigationShell) {
-          return ScreenLayout(
-            shellNavigator: navigationShell,
-          );
+      GoRoute(
+        path: '/surah/:id',
+        builder: (context, GoRouterState state) {
+          final id = int.parse(state.pathParameters['id'] ?? '1');
+
+          return SurahDetailPage(surahId: id);
         },
-        branches: [
-          StatefulShellBranch(
-            routes: [
-              GoRoute(
-                path: '/home',
-                builder: (context, state) => const HomePage(),
-              ),
-            ],
-          ),
-          StatefulShellBranch(
-            routes: [
-              GoRoute(
-                path: '/insight',
-                builder: (context, state) => const InsightPage(),
-              ),
-            ],
-          ),
-          StatefulShellBranch(
-            routes: [
-              GoRoute(
-                path: '/shortprayer',
-                builder: (context, state) => const ShortPrayerPage(),
-              ),
-            ],
-          ),
-          StatefulShellBranch(
-            routes: [
-              GoRoute(
-                path: '/bookmark',
-                builder: (context, state) => const BookmarkPage(),
-              ),
-            ],
-          ),
-        ],
-      )
+      ),
     ],
   );
 }

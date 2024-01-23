@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:quran/utils/theme_color.dart';
 
+// used when using bottom navigation bar
 class ScreenLayout extends StatelessWidget {
   const ScreenLayout({required this.shellNavigator, Key? key})
       : super(

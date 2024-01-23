@@ -1,5 +1,3 @@
-import 'package:equatable/equatable.dart';
-
 class SurahModel {
   final int? id;
   final String arabicName;
