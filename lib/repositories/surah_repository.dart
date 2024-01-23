@@ -22,7 +22,7 @@ class SurahRepository {
           .loadString('assets/data/surah-details/surah-$id.json');
 
       final surah = SurahDetailModel.fromJson(json.decode(data));
-      print('ini data $surah');
+
       return surah;
     } catch (e) {
       throw Exception('Error when get surah by id');
