@@ -39,9 +39,10 @@ dependencies:
   go_router: ^13.0.1
   google_fonts: ^6.1.0
   riverpod_annotation: ^2.3.3
+  share_plus: ^7.2.1
 
 dev_dependencies:
-  flutter_lints: ^2.0.0
+  flutter_lints: ^3.0.1
   flutter_test:
     sdk: flutter
 
@@ -52,3 +53,11 @@ flutter:
     - assets/data/
     - assets/data/surah-details/
     - assets/icons/
+
+  fonts:
+    - family: calibri
+      fonts:
+        - asset: assets/fonts/calibri-regular.ttf
+          weight: 400
+        - asset: assets/fonts/calibri-bold.ttf
+          weight: 800
