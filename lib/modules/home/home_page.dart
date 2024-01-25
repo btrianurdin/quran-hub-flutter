@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:quran/modules/home/components/search_box.dart';
 import 'package:quran/modules/home/components/surah_tab.dart';
 import 'package:quran/utils/font_styles.dart';
 import 'package:quran/utils/theme_color.dart';
@@ -30,6 +31,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
+    print('home render');
     return Scaffold(
       backgroundColor: ThemeColor.background,
       appBar: AppBar(
@@ -90,39 +92,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                         ),
                       ),
                       const SizedBox(height: 18),
-                      TextField(
-                        decoration: InputDecoration(
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10),
-                            borderSide: BorderSide.none,
-                          ),
-                          prefixIconConstraints: const BoxConstraints(
-                            minWidth: 35,
-                            minHeight: 18,
-                          ),
-                          prefixIcon: const Icon(
-                            Icons.search,
-                            color: ThemeColor.secondary,
-                          ),
-                          filled: true,
-                          fillColor: ThemeColor.surface,
-                          hintText: "Search surah",
-                          hintStyle: FontStyles.regular.copyWith(
-                            color: ThemeColor.secondary,
-                            fontSize: 12,
-                            height: 1.5,
-                          ),
-                          isDense: true,
-                          contentPadding: const EdgeInsets.symmetric(
-                            horizontal: 16,
-                            vertical: 8,
-                          ),
-                        ),
-                        style: FontStyles.regular.copyWith(
-                          fontSize: 12,
-                          height: 1.5,
-                        ),
-                      ),
+                      const SearchBox(),
                       const SizedBox(height: 24),
                       Stack(
                         children: [

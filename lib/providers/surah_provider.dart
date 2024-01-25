@@ -11,6 +11,9 @@ class SurahNotifier extends StateNotifier<List<SurahModel>> {
   }) : super([]);
 
   Future<List<SurahModel>> getAll() async {
+    // added to prevent blocking UI
+    await Future.delayed(const Duration(milliseconds: 300));
+
     return await _surahRepository.getAll();
   }
 
@@ -21,9 +24,20 @@ class SurahNotifier extends StateNotifier<List<SurahModel>> {
   }
 
   Future<List<VerseModel>> getVerses(int surahId) async {
+    // added to prevent blocking UI
+    await Future.delayed(const Duration(milliseconds: 300));
+
     final verses = await _surahRepository.getById(surahId);
 
     return verses.verses;
+  }
+
+  Future<List<SurahModel>> getFiltered(String query) async {
+    final surah = await _surahRepository.getAll();
+
+    return surah.where((element) {
+      return element.latinName.toLowerCase().contains(query.toLowerCase());
+    }).toList();
   }
 }
 
@@ -37,17 +51,38 @@ final surahProvider = FutureProvider<List<SurahModel>>((ref) async {
   return surah;
 });
 
-final surahDetailProvider =
-    FutureProvider.family<SurahModel, int>((ref, surahId) async {
-  final surah = await ref.watch(surahRepositoryProvider.notifier).getOne(surahId);
+final surahDetailProvider = FutureProvider.family<SurahModel, int>(
+  (ref, surahId) async {
+    final surah =
+        await ref.watch(surahRepositoryProvider.notifier).getOne(surahId);
 
-  return surah;
+    return surah;
+  },
+);
+
+final versesProvider = FutureProvider.family.autoDispose<List<VerseModel>, int>(
+  (ref, surahId) async {
+    final verses =
+        await ref.watch(surahRepositoryProvider.notifier).getVerses(surahId);
+
+    return verses;
+  },
+);
+
+final searchTextSurahProvider = StateProvider<String>((ref) {
+  return '';
 });
 
-final versesProvider =
-    FutureProvider.family<List<VerseModel>, int>((ref, surahId) async {
-  final verses =
-      await ref.watch(surahRepositoryProvider.notifier).getVerses(surahId);
+final searchSurahProvider = FutureProvider<List<SurahModel>>((ref) async {
+  final query = ref.watch(searchTextSurahProvider);
 
-  return verses;
+  if (query.isEmpty) {
+    return [];
+  }
+
+  final lists = await ref.watch(surahProvider.future);
+  await Future.delayed(const Duration(milliseconds: 100));
+  return lists.where((element) {
+    return element.latinName.toLowerCase().contains(query.toLowerCase());
+  }).toList();
 });

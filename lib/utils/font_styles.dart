@@ -25,9 +25,10 @@ class FontStyles {
     fontSize: 16,
   );
 
-  static final arabic = GoogleFonts.amiri(
+  static const arabic = TextStyle(
+    fontFamily: 'calibri',
     fontWeight: FontWeight.w400,
     fontSize: 24,
-    color: Colors.white,
+    color: Colors.white
   );
 }

@@ -34,9 +34,6 @@ class SurahTab extends ConsumerWidget {
               overlayColor: MaterialStateProperty.all(ThemeColor.surface),
               splashFactory: InkSplash.splashFactory,
               onTap: () => {
-                // Navigator.push(context, MaterialPageRoute(builder: (context) {
-                //   return SurahDetailPage(surahId: current.id!);
-                // }))
                 context.push('/surah/${current.id}')
               },
               child: Container(

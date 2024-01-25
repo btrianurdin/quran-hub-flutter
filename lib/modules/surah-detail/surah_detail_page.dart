@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
+import 'package:quran/modules/surah-detail/components/verse_lists.dart';
 import 'package:quran/providers/surah_provider.dart';
 import 'package:quran/utils/font_styles.dart';
 import 'package:quran/utils/theme_color.dart';
@@ -34,6 +35,8 @@ class _SurahDetailPageState extends State<SurahDetailPage> {
 
   @override
   Widget build(BuildContext context) {
+    final surahId = widget.surahId;
+
     return Scaffold(
       backgroundColor: ThemeColor.background,
       appBar: AppBar(
@@ -61,8 +64,7 @@ class _SurahDetailPageState extends State<SurahDetailPage> {
         ),
       ),
       body: Consumer(builder: (context, ref, child) {
-        final surah = ref.watch(surahDetailProvider(widget.surahId));
-        final verses = ref.watch(versesProvider(widget.surahId));
+        final surah = ref.watch(surahDetailProvider(surahId));
 
         return Container(
           padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -74,18 +76,21 @@ class _SurahDetailPageState extends State<SurahDetailPage> {
                   width: double.infinity,
                   margin: const EdgeInsets.only(bottom: 24, top: 24),
                   child: Stack(
+                    clipBehavior: Clip.none,
                     children: [
                       Positioned(
                         bottom: 0,
                         right: 0,
-                        child: SvgPicture.asset('assets/images/home-quran.svg',
-                            width: 280),
+                        child: SvgPicture.asset(
+                          'assets/images/home-quran.svg',
+                          width: 280,
+                        ),
                       ),
                       Opacity(
                         opacity: 0.9,
                         child: Container(
                           width: double.infinity,
-                          height: 260,
+                          height: 270,
                           decoration: const BoxDecoration(
                             borderRadius: BorderRadius.all(Radius.circular(20)),
                             gradient: LinearGradient(
@@ -99,6 +104,7 @@ class _SurahDetailPageState extends State<SurahDetailPage> {
                       ),
                       Container(
                         width: double.infinity,
+                        height: 270,
                         padding: const EdgeInsets.all(24),
                         child: surah.when(
                           data: (data) {
@@ -160,130 +166,13 @@ class _SurahDetailPageState extends State<SurahDetailPage> {
                     ],
                   ),
                 ),
-                SizedBox(
-                  width: double.infinity,
-                  child: verses.when(
-                    data: (data) {
-                      return ListView.separated(
-                        shrinkWrap: true,
-                        physics: const NeverScrollableScrollPhysics(),
-                        itemBuilder: (context, index) {
-                          return Column(
-                            children: [
-                              Container(
-                                width: double.infinity,
-                                decoration: BoxDecoration(
-                                  color: ThemeColor.surface,
-                                  borderRadius: BorderRadius.circular(10),
-                                ),
-                                padding: const EdgeInsets.symmetric(
-                                  vertical: 10,
-                                  horizontal: 13,
-                                ),
-                                margin: const EdgeInsets.only(top: 24),
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Container(
-                                      width: 27,
-                                      height: 27,
-                                      decoration: BoxDecoration(
-                                        color: ThemeColor.primary,
-                                        borderRadius: BorderRadius.circular(50),
-                                      ),
-                                      child: Center(
-                                        child: Text(
-                                          data[index].numberOfVerse.toString(),
-                                          style: FontStyles.regular.copyWith(
-                                            fontSize: 14,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                    Row(
-                                      children: [
-                                        SvgPicture.asset(
-                                          'assets/icons/share.svg',
-                                          width: 24,
-                                          theme: const SvgTheme(
-                                            currentColor: ThemeColor.primary,
-                                          ),
-                                        ),
-                                        const SizedBox(width: 14),
-                                        SvgPicture.asset(
-                                          'assets/icons/play.svg',
-                                          width: 24,
-                                          theme: const SvgTheme(
-                                            currentColor: ThemeColor.primary,
-                                          ),
-                                        ),
-                                        const SizedBox(width: 14),
-                                        SvgPicture.asset(
-                                          'assets/icons/bookmark.svg',
-                                          width: 24,
-                                          theme: const SvgTheme(
-                                            currentColor: ThemeColor.primary,
-                                          ),
-                                        ),
-                                      ],
-                                    )
-                                  ],
-                                ),
-                              ),
-                              const SizedBox(height: 30),
-                              Container(
-                                width: double.infinity,
-                                margin: const EdgeInsets.only(bottom: 16),
-                                child: Column(
-                                  crossAxisAlignment:
-                                      CrossAxisAlignment.stretch,
-                                  children: [
-                                    Text(
-                                      data[index].arabicText,
-                                      style: FontStyles.arabic.copyWith(
-                                        fontSize: 22,
-                                        height: 2.5,
-                                      ),
-                                      textAlign: TextAlign.right,
-                                      textDirection: TextDirection.rtl,
-                                    ),
-                                    const SizedBox(height: 20),
-                                    Text(
-                                      data[index].translationText,
-                                      style: FontStyles.regular.copyWith(
-                                        fontSize: 14,
-                                        color: ThemeColor.textPrimary,
-                                        height: 1.5,
-                                      ),
-                                      textAlign: TextAlign.left,
-                                    )
-                                  ],
-                                ),
-                              ),
-                            ],
-                          );
-                        },
-                        separatorBuilder: (context, index) {
-                          return const Divider(
-                            height: 1,
-                            color: Color.fromRGBO(135, 137, 163, .40),
-                          );
-                        },
-                        itemCount: data.length,
-                      );
-                    },
-                    error: (error, stackTrace) {
-                      return Center(
-                        child: Text('Error: $error'),
-                      );
-                    },
-                    loading: () {
-                      return const Center(
-                        child: CircularProgressIndicator(),
-                      );
-                    },
+                VerseLists(
+                  surahName: surah.when(
+                    data: (value) => value.latinName,
+                    error: (error, stackTrace) => '',
+                    loading: () => '',
                   ),
+                  surahId: surahId,
                 ),
                 const SizedBox(height: 20)
               ],
