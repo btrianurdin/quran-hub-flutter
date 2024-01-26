@@ -1,12 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:quran/services/storage/hive_storage.dart';
 import 'package:quran/utils/routes.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  runApp(const ProviderScope(child: AppMain()));
+  final HiveStorage hiveStorage = HiveStorage();
+  await hiveStorage.init();
+
+  runApp(
+    ProviderScope(
+      overrides: [
+        hiveStorageProvider.overrideWithValue(hiveStorage),
+      ],
+      child: const AppMain(),
+    ),
+  );
 }
 
 class AppMain extends StatelessWidget {

@@ -1,9 +1,13 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:quran/models/bookmark_model.dart';
+import 'package:quran/modules/surah-detail/components/verse_number_box.dart';
+import 'package:quran/providers/bookmark_provider.dart';
 import 'package:quran/providers/surah_provider.dart';
 import 'package:quran/utils/font_styles.dart';
 import 'package:quran/utils/theme_color.dart';
-import 'package:share_plus/share_plus.dart';
 
 class VerseLists extends ConsumerWidget {
   const VerseLists({required this.surahId, required this.surahName, super.key});
@@ -14,6 +18,9 @@ class VerseLists extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final verses = ref.watch(versesProvider(surahId));
+    final bookmarks = ref.watch(selectBookmarkProvider(surahId));
+
+    log('bookmark: $bookmarks');
 
     return SizedBox(
       width: double.infinity,
@@ -23,71 +30,21 @@ class VerseLists extends ConsumerWidget {
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
             itemBuilder: (context, index) {
+              final verse = data[index];
+              BookmarkModel bookmark = bookmarks.firstWhere((element) {
+                return element.numberOfVerse == verse.numberOfVerse;
+              }, orElse: () {
+                return BookmarkModel(bookmarkId: -1);
+              });
+
               return Column(
                 children: [
-                  Container(
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      color: ThemeColor.surface,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    margin: const EdgeInsets.only(top: 24),
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 2,
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Container(
-                          width: 27,
-                          height: 27,
-                          margin: const EdgeInsets.only(left: 14),
-                          decoration: BoxDecoration(
-                            color: ThemeColor.primary,
-                            borderRadius: BorderRadius.circular(50),
-                          ),
-                          child: Center(
-                            child: Text(
-                              data[index].numberOfVerse.toString(),
-                              style: FontStyles.regular.copyWith(
-                                fontSize: 14,
-                              ),
-                            ),
-                          ),
-                        ),
-                        Row(
-                          children: [
-                            IconButton(
-                              color: ThemeColor.primary,
-                              onPressed: () async {
-                                try {
-                                  await Share.share(
-                                    'Surah $surahName Ayat ${data[index].numberOfVerse}\n\n${data[index].arabicText}\n\n${data[index].translationText}\n\nQuran App ~',
-                                  );
-                                } catch (e) {
-                                  print('Error: $e');
-                                }
-                              },
-                              icon: const Icon(
-                                Icons.share_outlined,
-                                color: ThemeColor.primary,
-                                size: 24,
-                              ),
-                            ),
-                            const SizedBox(width: 4),
-                            IconButton(
-                              color: ThemeColor.primary,
-                              onPressed: () {},
-                              icon: const Icon(
-                                Icons.favorite_border,
-                                color: ThemeColor.primary,
-                                size: 24,
-                              ),
-                            )
-                          ],
-                        )
-                      ],
-                    ),
+                  VerseNumberBox(
+                    surahId: surahId,
+                    surahName: surahName,
+                    verse: verse,
+                    isBookmarked: bookmark.bookmarkId != -1,
+                    bookmarkId: bookmark.bookmarkId,
                   ),
                   const SizedBox(height: 30),
                   Container(
@@ -97,7 +54,7 @@ class VerseLists extends ConsumerWidget {
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
                         Text(
-                          data[index].arabicText,
+                          verse.arabicText,
                           style: FontStyles.arabic.copyWith(
                             fontSize: 28,
                             height: 2,
@@ -107,7 +64,7 @@ class VerseLists extends ConsumerWidget {
                         ),
                         const SizedBox(height: 20),
                         Text(
-                          data[index].translationText,
+                          verse.translationText,
                           style: FontStyles.regular.copyWith(
                             fontSize: 14,
                             color: ThemeColor.textPrimary,
