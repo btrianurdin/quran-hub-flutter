@@ -63,3 +63,11 @@ flutter:
           weight: 400
         - asset: assets/fonts/calibri-bold.ttf
           weight: 800
+    - family: uthman
+      fonts:
+        - asset: assets/fonts/uthman-ver1.otf
+          weight: 400
+    - family: uthman-light
+      fonts:
+        - asset: assets/fonts/uthman-ver2.otf
+          weight: 400

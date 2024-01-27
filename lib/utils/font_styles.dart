@@ -26,7 +26,7 @@ class FontStyles {
   );
 
   static const arabic = TextStyle(
-    fontFamily: 'calibri',
+    fontFamily: 'uthman-light',
     fontWeight: FontWeight.w400,
     fontSize: 24,
     color: Colors.white
