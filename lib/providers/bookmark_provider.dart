@@ -59,6 +59,26 @@ final selectBookmarkProvider =
   return bookmarks.where((element) => element.surahId == surahId).toList();
 });
 
+final bookmarkProviderGrouped = Provider.autoDispose((ref) {
+  final bookmarks = ref.watch(bookmarkProvider);
+
+  return bookmarks
+      .fold<Map<String, List<BookmarkModel>>>(
+        {},
+        (previousValue, element) {
+          final current = previousValue;
+          if (!current.containsKey(element.surahName)) {
+            current[element.surahName!] = [];
+          }
+
+          current[element.surahName]!.add(element);
+          return current;
+        },
+      )
+      .entries
+      .toList();
+});
+
 final addBookmarkProvider =
     FutureProvider.autoDispose.family<void, BookmarkModel>(
   (ref, bookmark) async {
