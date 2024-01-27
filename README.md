@@ -1,16 +1,25 @@
-# quran
+# Quran App: A Modern Quranic Experience 📖
 
-A new Flutter project.
+![Dart](https://img.shields.io/badge/dart-%230175C2.svg?style=for-the-badge&logo=dart&logoColor=white) ![Flutter](https://img.shields.io/badge/Flutter-%2302569B.svg?style=for-the-badge&logo=Flutter&logoColor=white)
 
-## Getting Started
+Dive into the Quran with Quran Hub – an app that's easy to use and customize. It's user-friendly, search for verses, bookmark your favorites, and read offline 🔥 ✨.
 
-This project is a starting point for a Flutter application.
+## Features:
+- [x] Quran Text: show all surahs and verses
+- [x] Favorite/Bookmark: Allow users to bookmark their favorite verses for quick access.
+- [x] Search Functionality: Quickly find specific surah.
+- [ ] Audio Support: Listen to the soothing recitation of verses.
+- [ ] Light Theme: Customize reading experience with a light theme option.
+- [ ] Last read: effortlessly continue your Quranic journey from where you left off.
 
-A few resources to get you started if this is your first Flutter project:
+## Demo:
+| Home | verses | bookmarks | search |
+| ---- | ------ | --------- | ------ |
+| ![home](https://raw.githubusercontent.com/btrianurdin/quran-app-flutter/main/assets/images/feature-1.png) | ![verses](https://raw.githubusercontent.com/btrianurdin/quran-app-flutter/main/assets/images/feature-2.png) | ![bookmarks](https://raw.githubusercontent.com/btrianurdin/quran-app-flutter/main/assets/images/feature-3.png) | ![search](https://raw.githubusercontent.com/btrianurdin/quran-app-flutter/main/assets/images/feature-4.png) |
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Credits: 
+- Quran API: [equran.id](https://equran.id/apidev/v2)
+- Figma Design: [Tanvir Ahassan](https://www.figma.com/community/file/966921639679380402)
+---
+X: https://twitter.com/btrianurdin
+Website: https://bnurd.me
