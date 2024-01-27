@@ -73,6 +73,7 @@ final searchTextSurahProvider = StateProvider<String>((ref) {
   return '';
 });
 
+
 final searchSurahProvider = FutureProvider<List<SurahModel>>((ref) async {
   final query = ref.watch(searchTextSurahProvider);
 

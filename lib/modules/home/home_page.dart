@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:quran/modules/home/components/search_box.dart';
 import 'package:quran/modules/home/components/surah_tab.dart';
 import 'package:quran/utils/font_styles.dart';
@@ -48,7 +49,9 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                 Icons.favorite_border,
                 color: Colors.white,
               ),
-              onPressed: () {},
+              onPressed: () {
+                context.push('/bookmarks');
+              },
               splashColor: ThemeColor.surface,
               highlightColor: ThemeColor.surface,
             ),
