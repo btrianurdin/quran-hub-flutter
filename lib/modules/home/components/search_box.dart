@@ -149,7 +149,7 @@ class _SearchBoxState extends ConsumerState<SearchBox> {
                       onTap: () => {
                         context.push(
                           '/surah/${current.id}',
-                          extra: {'from': 'search'},
+                          extra: {'from': 'search', 'surahName': current.latinName},
                         )
                       },
                       child: Container(

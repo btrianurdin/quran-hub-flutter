@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
@@ -6,23 +8,22 @@ import 'package:quran/providers/surah_provider.dart';
 import 'package:quran/shared/single_scrolling_layout.dart';
 import 'package:quran/utils/font_styles.dart';
 
-class SurahDetailPage extends StatefulWidget {
-  const SurahDetailPage({super.key, required this.surahId});
+class SurahDetailPage extends StatelessWidget {
+  const SurahDetailPage(
+      {super.key, required this.surahId, required this.surahName});
 
   final int surahId;
+  final String surahName;
 
-  @override
-  State<SurahDetailPage> createState() => _SurahDetailPageState();
-}
-
-class _SurahDetailPageState extends State<SurahDetailPage> {
   @override
   Widget build(BuildContext context) {
+    log('surah detail render ${surahName.toString()}');
     return SingleScrollingLayout(
       appBarTitle: 'Surah Detail',
+      scrollingAppBarTitle: surahName,
       child: Consumer(
         builder: (context, ref, child) {
-          final surah = ref.watch(surahDetailProvider(widget.surahId));
+          final surah = ref.watch(surahDetailProvider(surahId));
 
           return Column(
             children: [
@@ -126,7 +127,7 @@ class _SurahDetailPageState extends State<SurahDetailPage> {
                   error: (error, stackTrace) => '',
                   loading: () => '',
                 ),
-                surahId: widget.surahId,
+                surahId: surahId,
               ),
               const SizedBox(height: 20)
             ],

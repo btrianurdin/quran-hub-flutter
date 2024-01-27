@@ -17,6 +17,20 @@ class BookmarkPage extends StatelessWidget {
         builder: (context, ref, child) {
           final bookmarks = ref.watch(bookmarkProviderGrouped);
 
+          if (bookmarks.isEmpty) {
+            return Container(
+              margin: const EdgeInsets.symmetric(vertical: 30),
+              child: Center(
+                child: Text(
+                  'No bookmarks yet.',
+                  style: FontStyles.regular.copyWith(
+                    fontSize: 14,
+                  ),
+                ),
+              ),
+            );
+          }
+
           return ListView.separated(
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
@@ -88,7 +102,8 @@ class BookmarkPage extends StatelessWidget {
                                           ),
                                         ),
                                         const SizedBox(width: 4),
-                                        Consumer(builder: (context, ref, child) {
+                                        Consumer(
+                                            builder: (context, ref, child) {
                                           return IconButton(
                                             color: ThemeColor.primary,
                                             onPressed: () {

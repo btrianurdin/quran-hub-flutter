@@ -19,9 +19,7 @@ class VerseLists extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final verses = ref.watch(versesProvider(surahId));
     final bookmarks = ref.watch(selectBookmarkProvider(surahId));
-
-    log('bookmark: $bookmarks');
-
+    
     return SizedBox(
       width: double.infinity,
       child: verses.when(
