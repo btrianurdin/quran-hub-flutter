@@ -21,8 +21,9 @@ class Routes {
         path: '/surah/:id',
         builder: (context, GoRouterState state) {
           final id = int.parse(state.pathParameters['id'] ?? '1');
+          var extra = state.extra as Map<String, dynamic>? ?? {};
 
-          return SurahDetailPage(surahId: id);
+          return SurahDetailPage(surahId: id, surahName: extra['surahName']);
         },
       ),
       GoRoute(

@@ -34,7 +34,9 @@ class SurahTab extends ConsumerWidget {
               overlayColor: MaterialStateProperty.all(ThemeColor.surface),
               splashFactory: InkSplash.splashFactory,
               onTap: () => {
-                context.push('/surah/${current.id}')
+                context.push('/surah/${current.id}', extra: {
+                  'surahName': current.latinName,
+                })
               },
               child: Container(
                 padding: const EdgeInsets.all(18),
