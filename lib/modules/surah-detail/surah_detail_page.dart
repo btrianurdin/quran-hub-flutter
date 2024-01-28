@@ -9,8 +9,11 @@ import 'package:quran/shared/single_scrolling_layout.dart';
 import 'package:quran/utils/font_styles.dart';
 
 class SurahDetailPage extends StatelessWidget {
-  const SurahDetailPage(
-      {super.key, required this.surahId, required this.surahName});
+  const SurahDetailPage({
+    super.key,
+    required this.surahId,
+    required this.surahName,
+  });
 
   final int surahId;
   final String surahName;
