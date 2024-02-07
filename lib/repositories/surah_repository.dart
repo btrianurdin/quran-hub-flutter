@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:flutter/services.dart';
 import 'package:quran/models/surah_detail_model.dart';
 import 'package:quran/models/surah_model.dart';
