@@ -8,7 +8,7 @@ Dive into the Quran with Quran Hub – an app that's easy to use and customize. 
 - [x] Quran Text: show all surahs and verses
 - [x] Favorite/Bookmark: Allow users to bookmark their favorite verses for quick access.
 - [x] Search Functionality: Quickly find specific surah.
-- [ ] Audio Support: Listen to the soothing recitation of verses.
+- [x] Audio Support: Listen to the soothing recitation of verses.
 - [ ] Light Theme: Customize reading experience with a light theme option.
 - [x] Last read: effortlessly continue your Quranic journey from where you left off.
 
