@@ -12,10 +12,8 @@ Dive into the Quran with Quran Hub – an app that's easy to use and customize. 
 - [ ] Light Theme: Customize reading experience with a light theme option.
 - [x] Last read: effortlessly continue your Quranic journey from where you left off.
 
-## Demo:
-| Home | verses | bookmarks | search |
-| ---- | ------ | --------- | ------ |
-| ![home](https://raw.githubusercontent.com/btrianurdin/quran-app-flutter/main/assets/images/feature-1.png) | ![verses](https://raw.githubusercontent.com/btrianurdin/quran-app-flutter/main/assets/images/feature-2.png) | ![bookmarks](https://raw.githubusercontent.com/btrianurdin/quran-app-flutter/main/assets/images/feature-3.png) | ![search](https://raw.githubusercontent.com/btrianurdin/quran-app-flutter/main/assets/images/feature-4.png) |
+## Preview App:
+![home](https://raw.githubusercontent.com/btrianurdin/quran-hub-flutter/main/assets/images/preview-quran-low.jpg)
 
 ## Credits: 
 - Quran API: [equran.id](https://equran.id/apidev/v2)
