@@ -1,7 +1,10 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:quran/models/bookmark_model.dart';
+import 'package:quran/models/quran_audio_model.dart';
 import 'package:quran/models/verse_model.dart';
+import 'package:quran/providers/audio_provider.dart';
 import 'package:quran/providers/bookmark_provider.dart';
 import 'package:quran/utils/font_styles.dart';
 import 'package:quran/utils/theme_color.dart';
@@ -57,6 +60,58 @@ class VerseNumberBox extends StatelessWidget {
           ),
           Row(
             children: [
+              Consumer(builder: (context, ref, child) {
+                return Row(
+                  children: [
+                    IconButton(
+                      color: ThemeColor.primary,
+                      onPressed: () {
+                        ref
+                            .read(playerStateProvider.notifier)
+                            .loaded(QuranAudioModel(
+                              id: surahId,
+                              url: verse.audio,
+                              surahName: surahName,
+                              numberOfVerse: verse.numberOfVerse,
+                            ));
+                      },
+                      padding: const EdgeInsets.all(0),
+                      icon: const Icon(
+                        CupertinoIcons.play_arrow_solid,
+                        color: ThemeColor.primary,
+                        size: 26,
+                      ),
+                    ),
+                    const SizedBox(width: 4),
+                    IconButton(
+                      color: ThemeColor.primary,
+                      onPressed: () {
+                        if (isBookmarked) {
+                          ref.read(removeBookmarkProvider(bookmarkId));
+                        } else {
+                          ref.read(addBookmarkProvider(
+                            BookmarkModel(
+                              bookmarkId: UniqueKey().hashCode,
+                              surahId: surahId,
+                              surahName: surahName,
+                              numberOfVerse: verse.numberOfVerse,
+                              arabicText: verse.arabicText,
+                              latinText: verse.latinText,
+                              translationText: verse.translationText,
+                            ),
+                          ));
+                        }
+                      },
+                      icon: Icon(
+                        isBookmarked ? Icons.favorite : Icons.favorite_border,
+                        color: ThemeColor.primary,
+                        size: 24,
+                      ),
+                    ),
+                  ],
+                );
+              }),
+              const SizedBox(width: 4),
               IconButton(
                 color: ThemeColor.primary,
                 onPressed: () async {
@@ -74,34 +129,6 @@ class VerseNumberBox extends StatelessWidget {
                   size: 24,
                 ),
               ),
-              const SizedBox(width: 4),
-              Consumer(builder: (context, ref, child) {
-                return IconButton(
-                  color: ThemeColor.primary,
-                  onPressed: () {
-                    if (isBookmarked) {
-                      ref.read(removeBookmarkProvider(bookmarkId));
-                    } else {
-                      ref.read(addBookmarkProvider(
-                        BookmarkModel(
-                          bookmarkId: UniqueKey().hashCode,
-                          surahId: surahId,
-                          surahName: surahName,
-                          numberOfVerse: verse.numberOfVerse,
-                          arabicText: verse.arabicText,
-                          latinText: verse.latinText,
-                          translationText: verse.translationText,
-                        ),
-                      ));
-                    }
-                  },
-                  icon: Icon(
-                    isBookmarked ? Icons.favorite : Icons.favorite_border,
-                    color: ThemeColor.primary,
-                    size: 24,
-                  ),
-                );
-              }),
             ],
           )
         ],
