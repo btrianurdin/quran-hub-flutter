@@ -1,11 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
+import 'package:quran/providers/startup_provider.dart';
 import 'package:quran/utils/font_styles.dart';
 import 'package:quran/utils/theme_color.dart';
 
-class StartupPage extends StatelessWidget {
+class StartupPage extends StatefulWidget {
   const StartupPage({super.key});
+
+  @override
+  State<StartupPage> createState() => _StartupPageState();
+}
+
+class _StartupPageState extends State<StartupPage> {
+  bool _loading = false;
 
   @override
   Widget build(BuildContext context) {
@@ -50,28 +59,51 @@ class StartupPage extends StatelessWidget {
                         left: 0,
                         right: 0,
                         child: Center(
-                          child: ElevatedButton(
-                            style: ButtonStyle(
-                              backgroundColor: MaterialStateProperty.all(
-                                ThemeColor.accent,
-                              ),
-                              padding: MaterialStateProperty.resolveWith(
-                                (states) => const EdgeInsets.symmetric(
-                                  horizontal: 40,
-                                  vertical: 16,
+                          child: Consumer(
+                            builder: (context, ref, child) {
+                              return SizedBox(
+                                width: 200,
+                                height: 55,
+                                child: ElevatedButton(
+                                  style: ButtonStyle(
+                                    backgroundColor: MaterialStateProperty.all(
+                                      ThemeColor.accent,
+                                    ),
+                                    padding: MaterialStateProperty.resolveWith(
+                                      (states) => const EdgeInsets.symmetric(
+                                        horizontal: 40,
+                                        vertical: 16,
+                                      ),
+                                    ),
+                                  ),
+                                  child: !_loading
+                                      ? Text(
+                                          'Get Started',
+                                          style: FontStyles.regular.copyWith(
+                                            fontSize: 18,
+                                            color: ThemeColor.background,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        )
+                                      : const SizedBox(
+                                          width: 23,
+                                          height: 23,
+                                          child: CircularProgressIndicator(
+                                            color: ThemeColor.background,
+                                          ),
+                                        ),
+                                  onPressed: () {
+                                    if (_loading) return;
+                                    setState(() {
+                                      _loading = true;
+                                    });
+                                    ref
+                                        .read(startupNotifierProvider.notifier)
+                                        .updateStartup()
+                                        .then((_) => context.go('/home'));
+                                  },
                                 ),
-                              ),
-                            ),
-                            child: Text(
-                              'Get Started',
-                              style: FontStyles.regular.copyWith(
-                                fontSize: 18,
-                                color: ThemeColor.background,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            onPressed: () {
-                              context.go('/home');
+                              );
                             },
                           ),
                         ),
