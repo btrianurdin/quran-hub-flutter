@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
-import 'package:quran/providers/surah_provider.dart';
+import 'package:quran/providers/search_provider.dart';
 import 'package:quran/utils/debounce.dart';
 import 'package:quran/utils/font_styles.dart';
 import 'package:quran/utils/theme_color.dart';
