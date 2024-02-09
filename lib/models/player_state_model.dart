@@ -2,6 +2,12 @@ import 'package:quran/models/quran_audio_model.dart';
 
 class PlayerStateModel {
   final QuranAudioModel? data;
+  final int? surahId;
+  final String? surahName;
+  final List<String>? sources;
+  final int? prevNumber;
+  final int? currentNumber;
+  final int? nextNumber;
   final bool isPlaying;
   final bool isShowPlayer;
   final Duration? duration;
@@ -10,6 +16,12 @@ class PlayerStateModel {
 
   PlayerStateModel({
     this.data,
+    this.surahId,
+    this.surahName,
+    this.sources,
+    this.prevNumber,
+    this.currentNumber,
+    this.nextNumber,
     required this.isPlaying,
     required this.isShowPlayer,
     this.duration,
@@ -19,6 +31,12 @@ class PlayerStateModel {
 
   PlayerStateModel copyWith({
     QuranAudioModel? data,
+    int? surahId,
+    String? surahName,
+    List<String>? sources,
+    int? prevNumber,
+    int? currentNumber,
+    int? nextNumber,
     bool? isPlaying,
     bool? isShowPlayer,
     Duration? duration,
@@ -27,6 +45,12 @@ class PlayerStateModel {
   }) {
     return PlayerStateModel(
       data: data ?? this.data,
+      surahId: surahId ?? this.surahId,
+      surahName: surahName ?? this.surahName,
+      sources: sources ?? this.sources,
+      prevNumber: prevNumber ?? this.prevNumber,
+      currentNumber: currentNumber ?? this.currentNumber,
+      nextNumber: nextNumber ?? this.nextNumber,
       isPlaying: isPlaying ?? this.isPlaying,
       isShowPlayer: isShowPlayer ?? this.isShowPlayer,
       duration: duration ?? this.duration,

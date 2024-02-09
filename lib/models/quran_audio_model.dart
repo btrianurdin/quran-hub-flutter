@@ -19,6 +19,15 @@ class QuranAudioModel {
       numberOfVerse: json['ayat']['nomorAyat'],
     );
   }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'url': url,
+      'surahName': surahName,
+      'numberOfVerse': numberOfVerse,
+    };
+  }
 }
 
 // class QuranAudioVerseModel {

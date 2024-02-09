@@ -17,6 +17,7 @@ class VerseNumberBox extends StatelessWidget {
     required this.verse,
     required this.isBookmarked,
     required this.bookmarkId,
+    this.onPlayAudio,
     super.key,
   });
 
@@ -25,6 +26,7 @@ class VerseNumberBox extends StatelessWidget {
   final VerseModel verse;
   final int bookmarkId;
   final bool isBookmarked;
+  final void Function(QuranAudioModel)? onPlayAudio;
 
   @override
   Widget build(BuildContext context) {
