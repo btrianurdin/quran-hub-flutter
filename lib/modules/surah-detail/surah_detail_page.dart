@@ -2,7 +2,9 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:quran/models/bookmark_model.dart';
 import 'package:quran/modules/surah-detail/components/verse_lists.dart';
+import 'package:quran/providers/bookmark_provider.dart';
 import 'package:quran/providers/surah_provider.dart';
 import 'package:quran/shared/single_scrolling_layout.dart';
 import 'package:quran/utils/font_styles.dart';
@@ -19,17 +21,17 @@ class SurahDetailPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    log('surah detail render ${surahName.toString()}');
+    log('cek => surah detail render ${surahName.toString()}');
     return SingleScrollingLayout(
       appBarTitle: 'Surah Detail',
       scrollingAppBarTitle: surahName,
-      child: Consumer(
-        builder: (context, ref, child) {
-          final surah = ref.watch(surahDetailProvider(surahId));
+      slivers: [
+        SliverToBoxAdapter(
+          child: Consumer(
+            builder: (context, ref, child) {
+              final surah = ref.watch(surahDetailProvider(surahId));
 
-          return Column(
-            children: [
-              Container(
+              return Container(
                 width: double.infinity,
                 margin: const EdgeInsets.only(bottom: 24, top: 24),
                 child: Stack(
@@ -122,20 +124,63 @@ class SurahDetailPage extends StatelessWidget {
                     )
                   ],
                 ),
-              ),
-              VerseLists(
-                surahName: surah.when(
-                  data: (value) => value.latinName,
-                  error: (error, stackTrace) => '',
-                  loading: () => '',
-                ),
-                surahId: surahId,
-              ),
-              const SizedBox(height: 20)
-            ],
-          );
-        },
-      ),
+              );
+            },
+          ),
+        ),
+        Consumer(
+          builder: (context, ref, child) {
+            final verses = ref.watch(versesProvider(surahId));
+            final bookmarks = ref.watch(selectBookmarkProvider(surahId));
+
+            return verses.when(
+              data: (data) {
+                return SliverList(
+                  delegate: SliverChildBuilderDelegate(
+                    (context, index) {
+                      final verse = data[index];
+                      BookmarkModel bookmark = bookmarks.firstWhere((element) {
+                        return element.numberOfVerse == verse.numberOfVerse;
+                      }, orElse: () {
+                        return BookmarkModel(bookmarkId: -1);
+                      });
+
+                      return VerseLists(
+                        surahId: surahId,
+                        surahName: surahName,
+                        verse: verse,
+                        bookmark: bookmark,
+                        isLastItem: index == data.length - 1,
+                      );
+                    },
+                    childCount: data.length,
+                  ),
+                );
+              },
+              error: (error, stackTrace) {
+                return SliverToBoxAdapter(
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 16),
+                    child: Center(
+                      child: Text('Error: $error'),
+                    ),
+                  ),
+                );
+              },
+              loading: () {
+                return SliverToBoxAdapter(
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 16),
+                    child: const Center(
+                      child: CircularProgressIndicator(),
+                    ),
+                  ),
+                );
+              },
+            );
+          },
+        )
+      ],
     );
   }
 }

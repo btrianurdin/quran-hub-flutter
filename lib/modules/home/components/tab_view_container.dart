@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:quran/utils/font_styles.dart';
@@ -74,6 +76,12 @@ class _TabViewContainerState extends State<TabViewContainer> {
             if (notification.metrics.pixels / 100 <= 1 && !isTabScroll) {
               setState(() {
                 appBarOpacity = notification.metrics.pixels / 100;
+              });
+            }
+            if (isTabScroll && appBarOpacity < 1) {
+              log('cek => jalan!');
+              setState(() {
+                appBarOpacity = 1;
               });
             }
           }

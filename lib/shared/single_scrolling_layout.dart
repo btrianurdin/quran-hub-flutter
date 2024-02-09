@@ -5,14 +5,14 @@ import 'package:quran/utils/theme_color.dart';
 
 class SingleScrollingLayout extends StatefulWidget {
   const SingleScrollingLayout({
-    required this.child,
+    required this.slivers,
     required this.appBarTitle,
     this.scrollingAppBarTitle,
     this.actions,
     super.key,
   });
 
-  final Widget child;
+  final List<Widget> slivers;
   final String appBarTitle;
   final String? scrollingAppBarTitle;
   final List<Widget>? actions;
@@ -76,9 +76,9 @@ class _SingleScrollingLayoutState extends State<SingleScrollingLayout> {
       ),
       body: Container(
         padding: const EdgeInsets.symmetric(horizontal: 16),
-        child: SingleChildScrollView(
+        child: CustomScrollView(
           controller: _scrollController,
-          child: widget.child,
+          slivers: widget.slivers,
         ),
       ),
     );

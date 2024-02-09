@@ -47,7 +47,7 @@ class _AudioPlayerBoxState extends ConsumerState<AudioPlayerBox> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Surah ${player.data?.surahName} | Ayah ${player.data?.numberOfVerse}',
+                          'Surah ${player.data?.surahName} | Ayah ${player.currentNumber}',
                           style: FontStyles.regular.copyWith(
                               fontWeight: FontWeight.bold, fontSize: 12),
                         ),
@@ -67,12 +67,22 @@ class _AudioPlayerBoxState extends ConsumerState<AudioPlayerBox> {
                         ref.read(playerStateProvider.notifier).play();
                       }
                     },
-                    child: Icon(
-                      player.isPlaying
-                          ? CupertinoIcons.pause_solid
-                          : CupertinoIcons.play_arrow_solid,
-                      color: ThemeColor.primary,
-                    ),
+                    child: player.isLoading!
+                        ? Container(
+                            width: 18,
+                            height: 18,
+                            margin: const EdgeInsets.only(right: 8),
+                            child: const CircularProgressIndicator(
+                              color: ThemeColor.primary,
+                              strokeWidth: 2,
+                            ),
+                          )
+                        : Icon(
+                            player.isPlaying
+                                ? CupertinoIcons.pause_solid
+                                : CupertinoIcons.play_arrow_solid,
+                            color: ThemeColor.primary,
+                          ),
                   )
                 ],
               ),

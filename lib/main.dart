@@ -51,7 +51,7 @@ class AppMain extends ConsumerWidget {
         }),
       ),
       builder: (context, child) {
-        if (startup == null) return _buildLoading();
+        if (startup == null) return _loadingScreen();
         return child!;
       },
       routerDelegate: routes.routerDelegate,
@@ -60,7 +60,7 @@ class AppMain extends ConsumerWidget {
     );
   }
 
-  Widget _buildLoading() {
+  Widget _loadingScreen() {
     return Scaffold(
       backgroundColor: ThemeColor.background,
       body: Center(

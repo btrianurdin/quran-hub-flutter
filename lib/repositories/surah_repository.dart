@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:flutter/services.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:quran/models/surah_detail_model.dart';
 import 'package:quran/models/surah_model.dart';
 
@@ -28,3 +29,7 @@ class SurahRepository {
     }
   }
 }
+
+final surahRepositoryProvider = Provider((ref) {
+  return SurahRepository();
+});
