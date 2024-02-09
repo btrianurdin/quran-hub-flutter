@@ -158,7 +158,7 @@ class BookmarkPage extends StatelessWidget {
               separatorBuilder: (context, index) {
                 return const Divider(
                   color: ThemeColor.surface,
-                  height: 0,
+                  height: 2,
                 );
               },
             );

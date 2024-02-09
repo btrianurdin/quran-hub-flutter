@@ -6,7 +6,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:quran/models/bookmark_model.dart';
 import 'package:quran/models/last_read_model.dart';
+import 'package:quran/models/quran_audio_model.dart';
 import 'package:quran/models/verse_model.dart';
+import 'package:quran/providers/audio_provider.dart';
 import 'package:quran/providers/bookmark_provider.dart';
 import 'package:quran/providers/last_read_provider.dart';
 import 'package:quran/utils/font_styles.dart';
@@ -88,15 +90,13 @@ class VerseLists extends ConsumerWidget {
                           IconButton(
                             color: ThemeColor.primary,
                             onPressed: () {
-                              // ref
-                              //     .read(playerStateProvider.notifier)
-                              //     .loaded(QuranAudioModel(
-                              //       id: surahId,
-                              //       url: verse.audio,
-                              //       surahName: surahName,
-                              //       numberOfVerse:
-                              //           verse.numberOfVerse,
-                              //     ));
+                              ref.read(playAudioProvider(
+                                QuranAudioModel(
+                                  id: surahId,
+                                  surahName: surahName,
+                                  currentNumber: verse.numberOfVerse,
+                                ),
+                              ));
                             },
                             padding: const EdgeInsets.all(0),
                             icon: const Icon(
