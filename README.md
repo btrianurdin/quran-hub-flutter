@@ -13,7 +13,7 @@ Dive into the Quran with Quran Hub – an app that's easy to use and customize. 
 - [x] Last read: effortlessly continue your Quranic journey from where you left off.
 
 ## Preview App:
-![home](https://raw.githubusercontent.com/btrianurdin/quran-hub-flutter/main/assets/images/preview-quran-low.jpg)
+![home](https://raw.githubusercontent.com/btrianurdin/quran-hub-flutter/main/preview-quran-low.jpg)
 
 ## Credits: 
 - Quran API: [equran.id](https://equran.id/apidev/v2)
