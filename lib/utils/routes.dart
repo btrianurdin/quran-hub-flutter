@@ -1,21 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:quran/modules/bookmark/bookmark_page.dart';
 import 'package:quran/modules/home/home_page.dart';
 import 'package:quran/modules/startup/startup_page.dart';
 import 'package:quran/modules/surah-detail/surah_detail_page.dart';
+import 'package:quran/providers/startup_provider.dart';
 import 'package:quran/shared/audio_player_box.dart';
 import 'package:quran/shared/shell_route_layout.dart';
 
-class Routes {
-  static final GlobalKey<NavigatorState> _rootNavigatorKey =
-      GlobalKey<NavigatorState>();
-  static final GlobalKey<NavigatorState> _shellNavigatorKey =
-      GlobalKey<NavigatorState>();
+final _rootNavigatorKey = GlobalKey<NavigatorState>();
+final _shellNavigatorKey = GlobalKey<NavigatorState>();
 
-  static final GoRouter router = GoRouter(
+final routerProvider = Provider<GoRouter>((ref) {
+  final startup = ref.watch(startupProvider);
+
+  return GoRouter(
     navigatorKey: _rootNavigatorKey,
     initialLocation: '/intro',
+    redirect: (context, state) {
+      if (startup == null) return null;
+      if (startup && state.matchedLocation == '/intro') return '/home';
+      if (!startup) return '/intro';
+      return null;
+    },
     routes: <RouteBase>[
       GoRoute(
         path: '/intro',
@@ -75,4 +83,4 @@ class Routes {
       ),
     ],
   );
-}
+});
