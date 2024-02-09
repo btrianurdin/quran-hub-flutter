@@ -25,7 +25,8 @@ class StartupNotifier extends StateNotifier<bool?> {
   }
 }
 
-final startupNotifierProvider = StateNotifierProvider<StartupNotifier, bool?>((ref) {
+final startupNotifierProvider =
+    StateNotifierProvider<StartupNotifier, bool?>((ref) {
   final storage = ref.watch(hiveStorageProvider);
   return StartupNotifier(storage);
 });

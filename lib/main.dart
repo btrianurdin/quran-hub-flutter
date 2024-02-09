@@ -25,11 +25,11 @@ void main() async {
   );
 }
 
-class AppMain extends StatelessWidget {
+class AppMain extends ConsumerWidget {
   const AppMain({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     SystemChrome.setSystemUIOverlayStyle(
       const SystemUiOverlayStyle(
         statusBarColor: Colors.transparent,
@@ -37,28 +37,26 @@ class AppMain extends StatelessWidget {
       ),
     );
 
-    return Consumer(
-      builder: (context, ref, child) {
-        final startup = ref.watch(startupProvider);
+    final routes = ref.watch(routerProvider);
+    final startup = ref.watch(startupProvider);
 
-        return MaterialApp.router(
-          debugShowCheckedModeBanner: false,
-          title: 'Flutter Demo',
-          theme: ThemeData(
-            primarySwatch: Colors.blue,
-            pageTransitionsTheme: const PageTransitionsTheme(builders: {
-              TargetPlatform.android: CupertinoPageTransitionsBuilder(),
-              TargetPlatform.iOS: CupertinoPageTransitionsBuilder()
-            }),
-          ),
-          builder: (context, child) {
-            if (startup == null) return _buildLoading();
-
-            return child!;
-          },
-          routerConfig: Routes.init(startup: startup),
-        );
+    return MaterialApp.router(
+      debugShowCheckedModeBanner: false,
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        pageTransitionsTheme: const PageTransitionsTheme(builders: {
+          TargetPlatform.android: CupertinoPageTransitionsBuilder(),
+          TargetPlatform.iOS: CupertinoPageTransitionsBuilder()
+        }),
+      ),
+      builder: (context, child) {
+        if (startup == null) return _buildLoading();
+        return child!;
       },
+      routerDelegate: routes.routerDelegate,
+      routeInformationParser: routes.routeInformationParser,
+      routeInformationProvider: routes.routeInformationProvider,
     );
   }
 

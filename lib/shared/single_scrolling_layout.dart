@@ -8,12 +8,14 @@ class SingleScrollingLayout extends StatefulWidget {
     required this.child,
     required this.appBarTitle,
     this.scrollingAppBarTitle,
+    this.actions,
     super.key,
   });
 
   final Widget child;
   final String appBarTitle;
   final String? scrollingAppBarTitle;
+  final List<Widget>? actions;
 
   @override
   State<SingleScrollingLayout> createState() => _SingleScrollingLayoutState();
@@ -61,6 +63,7 @@ class _SingleScrollingLayoutState extends State<SingleScrollingLayout> {
           splashColor: ThemeColor.surface,
           highlightColor: ThemeColor.surface,
         ),
+        actions: widget.actions,
         title: Container(
           padding: const EdgeInsets.symmetric(horizontal: 0),
           child: Text(
